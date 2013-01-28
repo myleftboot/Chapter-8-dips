@@ -18,4 +18,13 @@ grid.drawgrid(10,win1);
 var theLabel = Ti.UI.createLabel({text: 'Important', top: 20, left: 20, font: {fontSize: 40}});
 win1.add(theLabel);
 
+	var switchOrientation = Ti.UI.createButton({title: 'Make Landscape', top: '50%', left: '30%'});
+	switchOrientation.addEventListener('click', rotateLayout);
+	win1.add(switchOrientation);
+	
+	function rotateLayout() {
+	win1.orientationModes = [Ti.UI.LANDSCAPE_LEFT];
+	switchOrientation.hide();
+	}
+	
 win1.open();
